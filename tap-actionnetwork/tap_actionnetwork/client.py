@@ -28,11 +28,13 @@ class ActionNetworkPaginator:
 class TapActionNetworkStream(RESTStream):
     """TapActionNetwork stream class."""
 
-    # Update this value if necessary or override `parse_response`.
     records_jsonpath = "$._embedded[*]"
-
-    # Update this value if necessary or override `get_new_paginator`.
     next_page_token_jsonpath = "$._links.next.href"  # noqa: S105
+    pages_to_consider = 10
+
+    @property
+    def schema(self) -> str:
+        return super().schema
 
     @property
     def url_base(self) -> str:

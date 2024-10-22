@@ -1,0 +1,76 @@
+{
+    "total_pages": 100,
+    "per_page": 25,
+    "page": 1,
+    "total_records": 2500,
+    "_links": {
+      "self": {
+        "href": "https://actionnetwork.org/api/v2/petitions/9f837109-710d-442f-8a99-857a21f36d25/signatures"
+      },
+      "osdi:signatures": [
+        {
+          "href": "https://actionnetwork.org/api/v2/petitions/9f837109-710d-442f-8a99-857a21f36d25/signatures/d6bdf50e-c3a4-4981-a948-3d8c086066d7"
+        },
+        {
+          "href": "https://actionnetwork.org/api/v2/petitions/9f837109-710d-442f-8a99-857a21f36d25/signatures/71497ab2-b3e7-4896-af46-126ac7287dab"
+        }
+      ],
+      "curies": [
+        {
+          "name": "osdi",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        },
+        {
+          "name": "action_network",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        }
+      ]
+    },
+    "_embedded": {
+      "osdi:signatures": [
+        {
+          "identifiers": [
+            "action_network:d6bdf50e-c3a4-4981-a948-3d8c086066d7"
+          ],
+          "created_date": "2014-03-26T18:04:00Z",
+          "modified_date": "2014-03-26T18:04:00Z",
+          "action_network:person_id": "699da712-929f-11e3-a2e9-12313d316c29",
+          "action_network:petition_id": "9f837109-710d-442f-8a99-857a21f36d25",
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/petitions/9f837109-710d-442f-8a99-857a21f36d25/signatures/d6bdf50e-c3a4-4981-a948-3d8c086066d7"
+            },
+            "osdi:petition": {
+              "href": "https://actionnetwork.org/api/v2/petitions/9f837109-710d-442f-8a99-857a21f36d25"
+            },
+            "osdi:person": {
+              "href": "https://actionnetwork.org/api/v2/people/699da712-929f-11e3-a2e9-12313d316c29"
+            }
+          }
+        },
+        {
+          "identifiers": [
+            "action_network:71497ab2-b3e7-4896-af46-126ac7287dab"
+          ],
+          "created_date": "2014-03-26T16:07:10Z",
+          "modified_date": "2014-03-26T16:07:10Z",
+          "comments": "Stop doing the thing",
+          "action_network:person_id": "c945d6fe-929e-11e3-a2e9-12313d316c29",
+          "action_network:petition_id": "9f837109-710d-442f-8a99-857a21f36d25",
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/petitions/9f837109-710d-442f-8a99-857a21f36d25/signatures/71497ab2-b3e7-4896-af46-126ac7287dab"
+            },
+            "osdi:petition": {
+              "href": "https://actionnetwork.org/api/v2/petitions/9f837109-710d-442f-8a99-857a21f36d25"
+            },
+            "osdi:person": {
+              "href": "https://actionnetwork.org/api/v2/people/c945d6fe-929e-11e3-a2e9-12313d316c29"
+            }
+          }
+        }
+      ]
+    }
+  }

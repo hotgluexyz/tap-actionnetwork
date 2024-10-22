@@ -1,0 +1,76 @@
+{
+    "total_pages": 1,
+    "per_page": 25,
+    "page": 1,
+    "total_records": 4,
+    "_links": {
+      "self": {
+        "href": "https://actionnetwork.org/api/v2/forms/adb951cb-51f9-420e-b7e6-de953195ec86/submissions"
+      },
+      "osdi:submissions": [
+        {
+          "href": "https://actionnetwork.org/api/v2/forms/adb951cb-51f9-420e-b7e6-de953195ec86/submissions/c851b31b-291e-4503-b8ea-e51a740e6e56"
+        },
+        {
+          "href": "https://actionnetwork.org/api/v2/forms/adb951cb-51f9-420e-b7e6-de953195ec86/submissions/32dc6359-76fd-4e97-aef7-f053a4fcc550"
+        }
+      ],
+      "curies": [
+        {
+          "name": "osdi",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        },
+        {
+          "name": "action_network",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        }
+      ]
+    },
+    "_embedded": {
+      "osdi:submissions": [
+        {
+          "identifiers": [
+            "action_network:c851b31b-291e-4503-b8ea-e51a740e6e56"
+          ],
+          "created_date": "2014-03-25T15:26:45Z",
+          "modified_date": "2014-03-25T15:26:46Z",
+          "action:person_id": "d3e27e15-e5b5-4707-be96-8bc359462133",
+          "action_network:form_id": "adb951cb-51f9-420e-b7e6-de953195ec86",
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/forms/adb951cb-51f9-420e-b7e6-de953195ec86/submissions/c851b31b-291e-4503-b8ea-e51a740e6e56"
+            },
+            "osdi:form": {
+              "href": "https://actionnetwork.org/api/v2/forms/adb951cb-51f9-420e-b7e6-de953195ec86"
+            },
+            "osdi:person": {
+              "href": "https://actionnetwork.org/api/v2/people/d3e27e15-e5b5-4707-be96-8bc359462133"
+            }
+          }
+        },
+        {
+          "identifiers": [
+            "action_network:4bf4254a-9411-4028-8cb7-a7d3ade5edea",
+            "free_forms:1"
+          ],
+          "created_date": "2014-03-24T17:00:42Z",
+          "modified_date": "2014-03-24T17:00:42Z",
+          "action:person_id": "c945d6fe-929e-11e3-a2e9-12313d316c29",
+          "action_network:form_id": "adb951cb-51f9-420e-b7e6-de953195ec86",
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/forms/adb951cb-51f9-420e-b7e6-de953195ec86/submissions/4bf4254a-9411-4028-8cb7-a7d3ade5edea"
+            },
+            "osdi:form": {
+              "href": "https://actionnetwork.org/api/v2/forms/adb951cb-51f9-420e-b7e6-de953195ec86"
+            },
+            "osdi:person": {
+              "href": "https://actionnetwork.org/api/v2/people/c945d6fe-929e-11e3-a2e9-12313d316c29"
+            }
+          }
+        }
+      ]
+    }
+  }

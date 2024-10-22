@@ -8,7 +8,6 @@ from singer_sdk import typing as th  # JSON Schema typing helpers
 
 from tap_actionnetwork.client import TapActionNetworkStream
 
-
 class ContactsStream(TapActionNetworkStream):
     """Define contacts stream."""
 
