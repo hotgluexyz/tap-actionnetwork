@@ -1,0 +1,25 @@
+{
+    "embed_standard_default_styles": "<link href='https://actionnetwork.org/css/style-embed.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/event/my-free-event?format=js&source=widget'></script><div id='can-event-area-my-free-event' style='width: 100%'><!-- this div is the target for our HTML insertion --></div>",
+    "embed_standard_layout_only_styles": "<link href='https://actionnetwork.org/css/style-embed-whitelabel.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/event/my-free-event?format=js&source=widget'></script><div id='can-event-area-my-free-event' style='width: undefined'><!-- this div is the target for our HTML insertion --></div>",
+    "embed_standard_no_styles": "<script src='https://actionnetwork.org/widgets/event/my-free-event?format=js&source=widget'></script><div id='can-event-area-my-free-event' style='width: undefined'><!-- this div is the target for our HTML insertion --></div>",
+    "embed_full_default_styles": "<link href='https://actionnetwork.org/css/style-embed.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/event/my-free-event?format=js&source=widget&style=full'></script><div id='can-event-area-my-free-event' style='width: undefined'><!-- this div is the target for our HTML insertion --></div>",
+    "embed_full_layout_only_styles": "<link href='https://actionnetwork.org/css/style-embed-whitelabel.css' rel='stylesheet' type='text/css' /><script src='https://actionnetwork.org/widgets/event/my-free-event?format=js&source=widget&style=full'></script><div id='can-event-area-my-free-event' style='width: undefined'><!-- this div is the target for our HTML insertion --></div>",
+    "embed_full_no_styles": "<script src='https://actionnetwork.org/widgets/event/my-free-event?format=js&source=widget&style=full'></script><div id='can-event-area-my-free-event' style='width: undefined'><!-- this div is the target for our HTML insertion --></div>",
+    "_links": {
+      "self": {
+        "href": "https://actionnetwork.org/api/v2/events/21789f03-0180-45d3-853c-91bd6fdc8c07/embed"
+      },
+      "curies": [
+        {
+          "name": "osdi",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        },
+        {
+          "name": "action_network",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        }
+      ]
+    }
+}

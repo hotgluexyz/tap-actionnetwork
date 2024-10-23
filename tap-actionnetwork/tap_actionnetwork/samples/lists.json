@@ -1,0 +1,76 @@
+{
+    "total_pages": 10,
+    "per_page": 25,
+    "page": 1,
+    "total_records": 243,
+    "_links": {
+      "next": {
+        "href": "https://actionnetwork.org/api/v2/lists?page=2"
+      },
+      "self": {
+        "href": "https://actionnetwork.org/api/v2/lists"
+      },
+      "osdi:lists": [
+        {
+          "href": "https://actionnetwork.org/api/v2/lists/71f8feef-61c8-4e6b-9745-ec1d7752f298"
+        },
+        {
+          "href": "https://actionnetwork.org/api/v2/lists/fc0a1ec6-5743-4b98-ae0c-cea8766b2212"
+        }
+      ],
+      "curies": [
+        {
+          "name": "osdi",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        },
+        {
+          "name": "action_network",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        }
+      ]
+    },
+    "_embedded": {
+      "osdi:lists": [
+        {
+          "identifiers": [
+            "action_network:71f8feef-61c8-4e6b-9745-ec1d7752f298"
+          ],
+          "origin_system": "Action Network",
+          "created_date": "2014-03-25T17:11:33Z",
+          "modified_date": "2014-03-25T17:13:33Z",
+          "title": "Stop Doing The Bad Thing Petition Signers",
+          "description": "Report",
+          "browser_url": "https://actionnetwork.org/reports/stop-doing-the-bad-thing-petition-signers/manage",
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/lists/71f8feef-61c8-4e6b-9745-ec1d7752f298"
+            },
+            "osdi:items": {
+              "href": "https://actionnetwork.org/api/v2/lists/71f8feef-61c8-4e6b-9745-ec1d7752f298/items"
+            }
+          }
+        },
+        {
+          "identifiers": [
+            "action_network:fc0a1ec6-5743-4b98-ae0c-cea8766b2212"
+          ],
+          "origin_system": "Action Network",
+          "created_date": "2014-03-24T18:26:42Z",
+          "modified_date": "2014-03-24T18:27:17Z",
+          "title": "Sign our new petition!",
+          "description": "Email",
+          "browser_url": "https://actionnetwork.org/emails/sign-our-new-petition/manage",
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/lists/fc0a1ec6-5743-4b98-ae0c-cea8766b2212"
+            },
+            "osdi:items": {
+              "href": "https://actionnetwork.org/api/v2/lists/fc0a1ec6-5743-4b98-ae0c-cea8766b2212/items"
+            }
+          }
+        }
+      ]
+    }
+  }

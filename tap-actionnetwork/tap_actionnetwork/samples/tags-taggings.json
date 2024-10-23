@@ -1,0 +1,76 @@
+{
+    "total_pages": 5,
+    "per_page": 25,
+    "page": 1,
+    "total_records": 123,
+    "_links": {
+      "next": {
+        "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298/taggings?page=2"
+      },
+      "self": {
+        "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298/taggings"
+      },
+      "osdi:taggings": [
+        {
+          "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298/taggings/82e909f9-1ac7-4952-bbd4-b4690a14bec2"
+        },
+        {
+          "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298/taggings/a9ccd87c-97f4-48db-9e6b-507509091839"
+        }
+      ],
+      "curies": [
+        {
+          "name": "osdi",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        },
+        {
+          "name": "action_network",
+          "href": "https://actionnetwork.org/docs/v2/{rel}",
+          "templated": true
+        }
+      ]
+    },
+    "_embedded": {
+      "osdi:taggings": [
+        {
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298/taggings/82e909f9-1ac7-4952-bbd4-b4690a14bec2"
+            },
+            "osdi:tag": {
+              "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298"
+            },
+            "osdi:person": {
+              "href": "https://actionnetwork.org/api/v2/people/82e909f9-1ac7-4952-bbd4-b4690a14bec2"
+            }
+          },
+          "identifiers": [
+            "action_network:82e909f9-1ac7-4952-bbd4-b4690a14bec2"
+          ],
+          "created_date": "2014-03-18T22:25:31Z",
+          "modified_date": "2014-03-18T22:25:38Z",
+          "item_type": "osdi:person"
+        },
+        {
+          "_links": {
+            "self": {
+              "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298/taggings/a9ccd87c-97f4-48db-9e6b-507509091839"
+            },
+            "osdi:tag": {
+              "href": "https://actionnetwork.org/api/v2/tags/71f8feef-61c8-4e6b-9745-ec1d7752f298"
+            },
+            "osdi:person": {
+              "href": "https://actionnetwork.org/api/v2/people/a9ccd87c-97f4-48db-9e6b-507509091839"
+            }
+          },
+          "identifiers": [
+            "action_network:a9ccd87c-97f4-48db-9e6b-507509091839"
+          ],
+          "created_date": "2014-03-18T22:24:24Z",
+          "modified_date": "2014-03-18T22:24:24Z",
+          "item_type": "osdi:person"
+        }
+      ]
+    }
+  }
