@@ -27,7 +27,7 @@ class TapTapActionNetwork(Tap):
 
     config_jsonschema = th.PropertiesList(
         th.Property(
-            "auth_token",
+            "token",
             th.StringType,
             required=True,
             description="The token to authenticate against the API service",
@@ -67,7 +67,7 @@ class TapTapActionNetwork(Tap):
         payload = {}
         headers = {
             'Content-Type': 'application/json',
-            'OSDI-API-Token': self.config.get("auth_token", "")
+            'OSDI-API-Token': self.config.get("token", "")
         }
 
         response = requests.request("GET", self.resources, headers=headers, data=payload)

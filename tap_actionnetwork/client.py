@@ -51,7 +51,7 @@ class TapActionNetworkStream(RESTStream):
         return APIKeyAuthenticator.create_for_stream(
             self,
             key="OSDI-API-Token",
-            value=self.config.get("auth_token", ""),
+            value=self.config.get("token", ""),
             location="header",
         )
 
@@ -65,8 +65,6 @@ class TapActionNetworkStream(RESTStream):
         headers = {}
         if "user_agent" in self.config:
             headers["User-Agent"] = self.config.get("user_agent")
-        # If not using an authenticator, you may also provide inline auth headers:
-        # headers["Private-Token"] = self.config.get("auth_token")  # noqa: ERA001
         return headers
     
     def get_new_paginator(self):
