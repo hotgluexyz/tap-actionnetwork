@@ -80,7 +80,6 @@ class TapTapActionNetwork(Tap):
                 name = custom_field.get("name")
                 if name:
                     custom_fields.add(name)
-                ##custom_fields.add(custom_field.get("name"))
         return custom_fields
     
     def _build_discovered_streams(
