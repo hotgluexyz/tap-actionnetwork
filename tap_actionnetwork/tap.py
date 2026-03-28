@@ -62,6 +62,50 @@ class TapTapActionNetwork(Tap):
         for item in data_sample:
             planified_dict.update(self.flatten(item))
         return planified_dict
+
+    def _fetch_metadata_custom_field_names(
+        self,
+        dynamically_discovered_streams: dict,
+        headers: dict,
+        payload: dict,
+    ) -> set[str]:
+        custom_fields = set( )
+        metadata_base = dynamically_discovered_streams.get("metadata", {}).get("url")
+        if metadata_base:
+            metadata_custom_fields_url = metadata_base.rstrip("/") + "/custom_fields"
+            response = requests.request("GET", metadata_custom_fields_url, headers=headers, data=payload)
+            response.raise_for_status()
+            response_json = response.json()
+            for custom_field in response_json.get("action_network:custom_fields", []):
+                name = custom_field.get("name")
+                if name:
+                    custom_fields.add(name)
+        return custom_fields
+    
+    def _build_discovered_streams(
+        self,
+        data_samples: dict,
+        custom_fields: set[str],
+        dynamically_discovered_streams: dict,
+    ) -> List[streams.TapActionNetworkStream]:
+        out = []
+        for stream in data_samples:
+            schema = self.get_schema_from_data_sample(data_samples[stream])
+            if stream == "people":
+                props = dict(schema.get("properties", {}))
+                for name in custom_fields:
+                    if name and f"custom_fields.{name}" not in props:
+                        props[f"custom_fields.{name}"] = {"type": ["string", "null"]}
+                schema["properties"] = props
+            out.append(
+                streams.TapActionNetworkStream(
+                    tap=self,
+                    name=stream,
+                    schema=schema,
+                    path=dynamically_discovered_streams.get(stream, {}).get("url"),
+                )
+            )
+        return out
     
     def discover_streams(self) -> List[streams.TapActionNetworkStream]:
         payload = {}
@@ -85,6 +129,10 @@ class TapTapActionNetwork(Tap):
                 if url:
                     dynamically_discovered_streams[pieces[1]] = {"name": pieces[1], "url": url}
         
+        custom_fields = self._fetch_metadata_custom_field_names(
+            dynamically_discovered_streams, headers, payload
+        )
+            
         data_samples = {}
         mapped_urls = []
         for stream in dynamically_discovered_streams:
@@ -93,18 +141,12 @@ class TapTapActionNetwork(Tap):
             if url in mapped_urls:
                 continue
             mapped_urls.append(url)
-            while True:
-                response = requests.request("GET", url, headers=headers, data=payload)
-                response.raise_for_status()
-                response_json = response.json()
-                self.get_data_samples(data_samples, stream, response_json)
-                if "_links" in response_json and "next" in response_json["_links"]:
-                    next_link = response_json["_links"].get("next", {}).get("href")
-                    if not next_link:
-                        break
-                    url = next_link
-                else:
-                    break
+            
+            response = requests.request("GET", url, headers=headers, data=payload)
+            response.raise_for_status()
+            response_json = response.json()
+            self.get_data_samples(data_samples, stream, response_json)
+            
             if not data_samples[stream]:
                 data_sample = {}
                 current_dir = os.path.dirname(__file__)
@@ -131,8 +173,11 @@ class TapTapActionNetwork(Tap):
                         self.logger.error(f"No sample data found for stream '{stream}'.")
                 except json.JSONDecodeError:
                     self.logger.error(f"Error decoding JSON from sample file for stream '{stream}'.")
-                
-        return [streams.TapActionNetworkStream(tap=self, name=stream, schema=self.get_schema_from_data_sample(data_samples[stream]), path=dynamically_discovered_streams.get(stream,{}).get("url")) for stream in data_samples]
+        
+        return self._build_discovered_streams(
+            data_samples, custom_fields, dynamically_discovered_streams
+        )
+
 
     def get_data_samples(self, data_samples, stream, response_json):
         if not response_json:
